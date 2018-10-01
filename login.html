@@ -1,0 +1,41 @@
+﻿<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="css/loginpage.css">
+    <title>會員管理系統</title>
+    <script type="text/javascript">
+      function check_data()
+      {
+        if (document.myForm.account.value.length == 0)
+          alert("帳號欄位不可以空白哦！");
+        else if (document.myForm.password.value.length == 0)
+          alert("密碼欄位不可以空白哦！");
+        else
+          myForm.submit();
+      }
+    </script>
+  </head>
+  <body>
+    <h1><img src="Images/52ks.jpg" width="450" height="150"></h1>
+
+    <form action="checkpwd.php" method="post" name="myForm">
+      <div width="40%" align="center">
+      <p>
+            <img src="Images/account.png">
+            <input name="account" type="text" size="15">
+      </p>
+      <p>
+            <img src="Images/password.png">
+            <input name="password" type="password" size="15">
+      </p>
+      <p>
+            <a href="javascript:document.form1.submit()"><img src="Images/login.jpg" onClick="check_data();" width="55" height="30"></a> &nbsp;
+            <a href="javascript:document.form1.submit()"><img src="Images/login1.jpg" width="90" height="30"></a>
+      </p>
+      </div>
+    </form>
+    <p align="center">
+      <a href="join.html" style="color:#800000; font-size:20px;" ><strong>加入會員</strong></a>　
+      <a href="search_pwd.html" style="color:#800000; font-size:20px;"><strong>查詢密碼</strong></a></p>
+  </body>
+</html>

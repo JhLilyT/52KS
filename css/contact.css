@@ -1,0 +1,282 @@
+body{background:url("../Images/main-background-bg.png");}
+.wrap{
+	margin:0 auto;
+	width:80%;
+}
+.wrapper{
+	padding:0 4%;
+}
+h2.style{
+	font-size: 2em;
+	color: #ffffff;
+	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif, sans-serif;
+}
+p.style{
+	color: #666666;
+	line-height: 1.8em;
+	font-size: 0.8725em;
+}
+
+
+.header{
+	padding-top: 2%;
+}
+.logo{
+	float:left;
+}
+.cssmenu {
+	float: right;
+	font-size:18px;
+
+}
+.cssmenu > ul > li {
+  	display:inline-block;
+ 	position: relative;
+	background: #f6f6f6; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f6f6f6 1%, #f0f0f0 19%, #efefef 39%, #ededed 59%, #dddddd 98%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#f6f6f6), color-stop(19%,#f0f0f0), color-stop(39%,#efefef), color-stop(59%,#ededed), color-stop(98%,#dddddd)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f6f6f6 1%,#f0f0f0 19%,#efefef 39%,#ededed 59%,#dddddd 98%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f6f6f6 1%,#f0f0f0 19%,#efefef 39%,#ededed 59%,#dddddd 98%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f6f6f6 1%,#f0f0f0 19%,#efefef 39%,#ededed 59%,#dddddd 98%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f6f6f6 1%,#f0f0f0 19%,#efefef 39%,#ededed 59%,#dddddd 98%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+}
+.cssmenu > ul > li.active a{
+	color: #ffffff;
+	background: #9d9d9d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #9d9d9d 5%, #8d8d8d 40%, #7d7d7d 68%, #6d6d6d 82%, #5d5d5d 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#9d9d9d), color-stop(40%,#8d8d8d), color-stop(68%,#7d7d7d), color-stop(82%,#6d6d6d), color-stop(100%,#5d5d5d)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9d9d9d', endColorstr='#5d5d5d',GradientType=0 ); /* IE6-9 */
+}
+.cssmenu > ul > li span img {
+	vertical-align: middle;
+}
+.cssmenu > ul > li > a {
+	display: block;
+	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif, sans-serif;
+	font-size: 1em;
+	color: #161616;
+	line-height: 3.8em;
+	padding: 14px 24px;
+	-webkit-transition: color .15s;
+	-moz-transition: color .15s;
+	-o-transition: color .15s;
+	transition: color .15s;
+}
+.cssmenu > ul > li > a:hover {
+	-webkit-transition: 0.9s;
+	-moz-transition: 0.9s;
+	-o-transition: 0.9s;
+	transition: 0.9s;
+	color: #ffffff;
+	background: #9d9d9d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #9d9d9d 5%, #8d8d8d 40%, #7d7d7d 68%, #6d6d6d 82%, #5d5d5d 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#9d9d9d), color-stop(40%,#8d8d8d), color-stop(68%,#7d7d7d), color-stop(82%,#6d6d6d), color-stop(100%,#5d5d5d)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9d9d9d', endColorstr='#5d5d5d',GradientType=0 ); /* IE6-9 */
+}
+.cssmenu > ul > li > ul {
+	 font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif, sans-serif;
+	z-index: 999;
+	opacity: 0;
+	visibility: hidden;
+	padding: 8px;
+	background: #5C5C5C;
+	color:#fff;
+	text-align: left;
+	position: absolute;
+	top: 55px;
+	left: 50%;
+	margin-top: 34px;
+	margin-left: -90px;
+	width: 180px;
+	-webkit-transition: all .3s .1s;
+	-moz-transition: all .3s .1s;
+	-o-transition: all .3s .1s;
+	transition: all .3s .1s;
+}
+.cssmenu > ul > li:hover > ul {
+	opacity: 1;
+	top: 65px;
+	visibility: visible;
+}
+.cssmenu > ul > li > ul:before {
+	content: '';
+	display: block;
+	border-color: transparent transparent #5C5C5C transparent;
+	border-style: solid;
+	border-width: 10px;
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	margin-left: -10px;
+}
+.cssmenu > ul ul > li {
+	position: relative;
+}
+.cssmenu ul ul a {
+	color: #ffffff;
+	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif, sans-serif;
+	font-size: 13px;
+	background: #5C5C5C;
+	padding: 8px;
+	display: block;
+	-webkit-transition: background-color 0.1s;
+	-moz-transition: background-color 0.1s;
+	-o-transition: background-color 0.1s;
+	transition: background-color 0.1s;
+}
+.cssmenu ul ul a:hover {
+	background-color: #f0f0f0;
+}
+.cssmenu ul ul ul {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	top: -16px;
+	left: 206px;
+	padding: 8px;
+	background-color: #fafafa;
+	text-align: left;
+	width: 160px;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+}
+.cssmenu ul ul > li:hover > ul {
+	opacity: 1;
+	left: 190px;
+	visibility: visible;
+}
+.cssmenu ul ul a:hover {
+	background: #4F4E4E;
+ 	color: #f0f0f0;
+}
+
+.content-section#services {
+  margin-top: 0px;
+}
+h1{color:#f5f5f5;
+   text-align:center;
+   text-shadow:2px 2px #34171b;
+   font-size:70px;
+   font-family:Symbol;
+}
+
+.service-item {
+  position: relative;
+  color: #0B173B;
+  text-align: center;
+  margin-bottom: 30px;
+  width:64%;
+  margin-left:250px;
+  font-size:20px;
+}
+
+
+
+.service-item .service-icon1 {
+  background: url(../images/image22.png) no-repeat center;
+  font-size: 3em;
+  font-family: "Symbol";
+  padding: 110px 0;
+  color: #0B173B;
+}
+.service-item .service-icon1 .service-h4 {
+    visibility: hidden;
+}
+.service-item .service-icon2 {
+  background: url(../images/image11.png) no-repeat center;
+  font-size: 3em;
+  font-family: "Symbol";
+  padding: 110px 0;
+  color:#0B173B;
+}
+.service-item .service-icon2 .service-h4 {
+    visibility: hidden;
+}
+.service-item .service-content {
+  background: url(../images/main-background-bg.png);
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+.service-item .service-content .inner-service {
+  padding: 5px;
+}
+.service-item .service-content h3 {
+  font-size: 25px;
+  text-transform: uppercase;
+  text-shadow:2px 2px #34171b;
+  color: #fafafa;
+  display: inline-block;
+  border-bottom: 1px solid #fafafa;
+  margin-bottom: 10px;
+}
+
+.service-item .service-content .service-br {
+	color:#000000;
+	text-shadow:2px 2px #682e36;
+
+}
+
+.service-item:hover .service-icon {
+  opacity: 0;
+  visibility: hidden;
+}
+.service-item:hover .service-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+#service-1 {
+  background:url("../Images/main-background-bg.png");
+}
+
+#service-2 {
+  background:url("../Images/main-background-bg.png");
+}
+#wrapper {
+	padding: 0;
+	background: url(images/main-image-bg.jpg) no-repeat center top;
+}
+
+/* Header */
+
+#header-wrapper {
+	overflow: hidden;
+	height: 300px;
+	background: url(images/header-wrapper-bg.png) repeat-x left top;
+}
+
+#header {
+	overflow: hidden;
+	width: 950px;
+	height: 300px;
+	margin: 0 auto;
+}
+#logo {
+	float: left;
+	width: 254px;
+	height: 300px;
+	margin: 0px auto;
+	padding: 135px 0 0 0;
+	background: url(images/logo-bg.png) no-repeat left top;
+	color: #FFFFFF;
+}

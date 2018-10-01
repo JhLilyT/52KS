@@ -1,0 +1,386 @@
+<!DOCTYPE html><html class="no-js" lang="en">
+<head>
+
+   <meta charset="utf-8">
+	<title>Travel</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+   <link rel="stylesheet" href="css/magnific-popup.css">
+
+   <!-- Script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+    <title>Distance Matrix service</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+	<script src="js/bootstrap.js"></script>
+	<script src="js/bootstrap-select.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-select.css">
+
+
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map-canvas {
+        height: 100%;
+        width: 50%;
+      }
+      #content-pane {
+        float:right;
+        width:48%;
+        padding-left: 2%;
+      }
+      #outputDiv {
+        font-size: 11px;
+      }
+    </style>
+    <script>
+var map;
+var geocoder;
+var bounds = new google.maps.LatLngBounds();
+var markersArray = [];
+
+//var origins = [];
+//var destinations = [];
+var step1 = new google.maps.LatLng(22.639792, 120.302228); //高雄火車站
+var step2 = new google.maps.LatLng(22.660780, 120.350794); //澄清湖
+var step3 = new google.maps.LatLng(22.614177,120.265939); //旗津
+var step4 = new google.maps.LatLng(22.618385,120.317382); //瑞豐夜市
+var step5 = new google.maps.LatLng(22.756824,120.315160); //橋頭糖廠
+var step6 = new google.maps.LatLng(22.656969,120.286490); //高雄美術館
+var step7 = new google.maps.LatLng(22.639455,120.323249); //科工館
+var step8 = new google.maps.LatLng(22.646686,120.283575); //中都愛河濕地
+var step9 = new google.maps.LatLng(22.623701,120.303047); //新崛江
+var step10 = new google.maps.LatLng(22.595214,120.304908); //夢時代
+var step11 = new google.maps.LatLng(22.613835,120.304676); //三多商圈
+var step12 = new google.maps.LatLng(22.624969,120.363489); //大東文化藝術中心
+var step13 = new google.maps.LatLng(22.612751,120.263965); //旗後砲臺
+var step14 = new google.maps.LatLng(22.578625,120.344652); //淨園休閒農場
+var step15 = new google.maps.LatLng(22.626073,120.317931); //文化中心
+var step16 = new google.maps.LatLng(22.624861,120.289129); //愛河
+var step17 = new google.maps.LatLng(22.758820,120.439298); //佛陀紀念中心
+var step18 = new google.maps.LatLng(22.620005,120.281585); //駁二特區
+var step19 = new google.maps.LatLng(22.633428,120.302368); //六合夜市
+var step20 = new google.maps.LatLng(22.730055,120.407070); //義大遊樂中心
+
+var destinationIcon = 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=D|FF0000|000000';
+var originIcon = 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=O|FFFF00|000000';
+
+function initialize() {
+  var opts = {
+    center: new google.maps.LatLng(22.639792, 120.302228),
+    zoom: 14
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'), opts);
+  geocoder = new google.maps.Geocoder();
+  var polyOptions = {
+		  strokeColor:'#000000',
+		  strokeOpacity:1.0,
+		  strokeWeight:3
+  };
+  poly = new google.maps.Ployline(polyOptions);
+  poly.setMap(map);
+  google.maps.event.addListener(map,'click',addLatLng);
+}
+
+function calculateDistances(a,b,c,d) {
+  var service = new google.maps.DistanceMatrixService();
+  service.getDistanceMatrix(
+    {
+      origins: [a,b,c,d],
+      destinations: [a,b,c,d],
+      travelMode: google.maps.TravelMode.DRIVING,
+      unitSystem: google.maps.UnitSystem.METRIC,
+      avoidHighways: false,
+      avoidTolls: false,
+    }, callback);
+}
+
+function callback(response, status) {
+	  if (status != google.maps.DistanceMatrixStatus.OK) {
+	    alert('Error was: ' + status);
+	  } else {
+	    var origins = response.originAddresses;
+	    var destinations = response.destinationAddresses;
+
+	    var outputDiv = document.getElementById('outputDiv');
+	    outputDiv.innerHTML = '';
+
+        //for(i=0; i < origins.length; i++;)
+        //for(j=0; j < destinations.length; j++)
+        //parseFloat(results[0].distance.text);
+
+        // response results
+	    var results = response.rows[0].elements;
+        var results2 = response.rows[1].elements;
+        var results3 = response.rows[2].elements;
+        var results4 = response.rows[3].elements;
+
+        //distance
+
+	    var step1tostep2km = parseFloat(results[1].distance.text);
+	    var step1tostep3km = parseFloat(results[2].distance.text);
+	    var step1tostep4km = parseFloat(results[3].distance.text);
+	    var step2tostep1km = parseFloat(results2[0].distance.text);
+	    var step2tostep3km = parseFloat(results2[2].distance.text);
+	    var step2tostep4km = parseFloat(results2[3].distance.text);
+	    var step3tostep1km = parseFloat(results3[0].distance.text);
+	    var step3tostep2km = parseFloat(results3[1].distance.text);
+	    var step3tostep4km = parseFloat(results3[3].distance.text);
+	    var step4tostep1km = parseFloat(results4[0].distance.text);
+	    var step4tostep2km = parseFloat(results4[1].distance.text);
+	    var step4tostep3km = parseFloat(results4[2].distance.text);
+
+
+	    //duration
+
+	    var step1tostep2sec = parseInt((results[1].duration.value)/60);
+	    var step1tostep3sec = parseInt((results[2].duration.value)/60);
+	    var step1tostep4sec = parseInt((results[3].duration.value)/60);
+	    var step2tostep1sec = parseInt((results2[0].duration.value)/60);
+	    var step2tostep3sec = parseInt((results2[2].duration.value)/60);
+	    var step2tostep4sec = parseInt((results2[3].duration.value)/60);
+	    var step3tostep1sec = parseInt((results3[0].duration.value)/60);
+	    var step3tostep2sec = parseInt((results3[1].duration.value)/60);
+	    var step3tostep4sec = parseInt((results3[3].duration.value)/60);
+	    var step4tostep1sec = parseInt((results4[0].duration.value)/60);
+	    var step4tostep2sec = parseInt((results4[1].duration.value)/60);
+	    var step4tostep3sec = parseInt((results4[2].duration.value)/60);
+
+	    function formatFloat(num, pos)
+	    {
+	      var size = Math.pow(10, pos);
+	      return Math.round(num * size) / size;
+	    }
+
+        	//alldistance
+        	var alldistance = step1tostep2km + step2tostep3km + step3tostep4km;
+        	var alldistance2 = step1tostep2km + step2tostep4km + step4tostep3km;
+        	var alldistance3 = step1tostep3km + step3tostep2km + step2tostep4km;
+        	var alldistance4 = step1tostep3km + step3tostep4km + step4tostep2km;
+        	var alldistance5 = step1tostep4km + step4tostep2km + step2tostep3km;
+        	var alldistance6 = step1tostep4km + step4tostep3km + step3tostep2km;
+
+        	//allduration
+        	var allduration = step1tostep2sec + step2tostep3sec + step3tostep4sec;
+        	var allduration2 = step1tostep2sec + step2tostep4sec + step4tostep3sec;
+        	var allduration3 = step1tostep3sec + step3tostep2sec + step2tostep4sec;
+        	var allduration4 = step1tostep3sec + step3tostep4sec + step4tostep2sec;
+        	var allduration5 = step1tostep4sec + step4tostep2sec + step2tostep3sec;
+            var allduration6 = step1tostep4sec + step4tostep3sec + step3tostep2sec;
+
+	        outputDiv.innerHTML += origins[0] + ' to ' + destinations[1]
+	        + ': ' + step1tostep2km + 'km ' + ' in '
+	        + step1tostep2sec + 'min ' +'<br>' + origins[1] + ' to ' + destinations[2]
+	        + ': ' + step2tostep3km + 'km ' + ' in '
+	        + step2tostep3sec + 'min ' +'<br>' + origins[2] + ' to ' + destinations[3]
+	        + ': ' + step3tostep4km + 'km ' + ' in '
+	        + step3tostep4sec + 'min ' +'<br>' + '總距離: ' + formatFloat(alldistance, 2) +'km' + ' 總共耗時:'+ allduration +'min' + '<br><br>';
+
+	        outputDiv.innerHTML += origins[0] + ' to ' + destinations[1]
+	        + ': ' + step1tostep2km + 'km ' + ' in '
+	        + step1tostep2sec + 'min ' +'<br>' + origins[1] + ' to ' + destinations[3]
+	        + ': ' + step2tostep4km + 'km ' + ' in '
+	        + step2tostep4sec + 'min ' +'<br>' + origins[3] + ' to ' + destinations[2]
+	        + ': ' + step4tostep3km + 'km ' + ' in '
+	        + step4tostep3sec + 'min ' +'<br>' + '總距離: ' + formatFloat(alldistance2, 2) +'km' + ' 總共耗時:'+ allduration2 +'min' + '<br><br>';
+
+	        outputDiv.innerHTML += origins[0] + ' to ' + destinations[2]
+	        + ': ' + step1tostep3km + 'km ' + ' in '
+	        + step1tostep3sec + 'min ' +'<br>' + origins[2] + ' to ' + destinations[1]
+	        + ': ' + step3tostep2km + 'km ' + ' in '
+	        + step3tostep2sec + 'min ' +'<br>' + origins[1] + ' to ' + destinations[3]
+	        + ': ' + step2tostep4km + 'km ' + ' in '
+	        + step2tostep4sec + 'min ' +'<br>' + '總距離: ' + formatFloat(alldistance3, 2) +'km' + ' 總共耗時:'+ allduration3 +'min' + '<br><br>';
+
+	        outputDiv.innerHTML += origins[0] + ' to ' + destinations[2]
+	        + ': ' + step1tostep3km + 'km ' + ' in '
+	        + step1tostep3sec + 'min ' +'<br>' + origins[2] + ' to ' + destinations[3]
+	        + ': ' + step3tostep4km + 'km ' + ' in '
+	        + step3tostep4sec + 'min ' +'<br>' + origins[3] + ' to ' + destinations[1]
+	        + ': ' + step4tostep2km + 'km ' + ' in '
+	        + step4tostep2sec + 'min ' +'<br>' + '總距離: ' + formatFloat(alldistance4, 2) +'km' + ' 總共耗時:'+ allduration4 +'min' + '<br><br>';
+
+	        outputDiv.innerHTML += origins[0] + ' to ' + destinations[3]
+	        + ': ' + step1tostep4km + 'km ' + ' in '
+	        + step1tostep4sec + 'min ' +'<br>' + origins[3] + ' to ' + destinations[1]
+	        + ': ' + step4tostep2km + 'km ' + ' in '
+	        + step4tostep2sec + 'min ' +'<br>' + origins[1] + ' to ' + destinations[2]
+	        + ': ' + step2tostep3km + 'km ' + ' in '
+	        + step2tostep3sec + 'min ' +'<br>' + '總距離: ' + formatFloat(alldistance5, 2) +'km' + ' 總共耗時:'+ allduration5 +'min' + '<br><br>';
+
+	        outputDiv.innerHTML += origins[0] + ' to ' + destinations[3]
+	        + ': ' + step1tostep4km + 'km ' + ' in '
+	        + step1tostep4sec + 'min ' +'<br>' + origins[3] + ' to ' + destinations[2]
+	        + ': ' + step4tostep3km + 'km ' + ' in '
+	        + step4tostep3sec + 'min ' +'<br>' + origins[2] + ' to ' + destinations[1]
+	        + ': ' + step3tostep2km + 'km ' + ' in '
+	        + step3tostep2sec + 'min ' +'<br>' + '總距離: ' + formatFloat(alldistance6, 2) +'km' + ' 總共耗時:'+ allduration6 +'min' + '<br><br>';
+
+
+
+
+
+        	}
+
+}
+function addLatLng(event) {
+
+	  var path = poly.getPath();
+
+	  // Because path is an MVCArray, we can simply append a new coordinate
+	  // and it will automatically appear.
+	  path.push(event.latLng);
+
+	  // Add a new marker at the new plotted point on the polyline.
+	  var marker = new google.maps.Marker({
+	    position: event.latLng,
+	    title: '#' + path.getLength(),
+	    map: map
+	  });
+	}
+
+
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+</head>
+
+<body>
+
+
+   <header id="home">
+
+      <nav id="nav-wrap">
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+	         <li><a class="smoothscroll" href="#styles">Service</a></li>
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+
+
+
+   </header>
+
+   <!-- Style Guide Section
+   ================================================== -->
+   <section id="styles" style="padding: 90px 0 72px; background: #fff;">
+
+      <div class="row add-bottom">
+
+         <div class="twelve columns">
+
+
+               <div id="content-pane">
+      <div id="inputs">
+      <br>
+      <b>起點</b>
+      <br>
+      <select id="start" class="selectpicker">
+      <option value="step1">高雄火車站</option>
+      <option value="step2">澄清湖</option>
+      <option value="step3">旗津</option>
+      <option value="step4">瑞豐夜市</option>
+      <option value="step5">橋頭糖廠</option>
+      <option value="step6">高雄美術館</option>
+      <option value="step7">科工館</option>
+      <option value="step8">中都愛河濕地</option>
+      <option value="step9">新崛江</option>
+      <option value="step10">夢時代</option>
+      <option value="step11">三多商圈</option>
+      <option value="step12">大東文化藝術中心</option>
+      <option value="step13">旗後砲臺</option>
+      <option value="step14">淨園休閒農場</option>
+      <option value="step15">文化中心</option>
+      <option value="step16">愛河</option>
+      <option value="step17">佛陀紀念中心</option>
+      <option value="step18">駁二特區</option>
+      <option value="step19">六合夜市</option>
+      <option value="step20">義大遊樂中心</option>
+    </select>
+    <br>
+    <br>
+    <b>想去的景點:</b>
+    <br>
+    <select id="waypoints" class="selectpicker" multiple data-max-options="3">
+      <option value="step1">高雄火車站</option>
+      <option value="step2">澄清湖</option>
+      <option value="step3">旗津</option>
+      <option value="step4">瑞豐夜市</option>
+      <option value="step5">橋頭糖廠</option>
+      <option value="step6">高雄美術館</option>
+      <option value="step7">科工館</option>
+      <option value="step8">中都愛河濕地</option>
+      <option value="step9">新崛江</option>
+      <option value="step10">夢時代</option>
+      <option value="step11">三多商圈</option>
+      <option value="step12">大東文化藝術中心</option>
+      <option value="step13">旗後砲臺</option>
+      <option value="step14">淨園休閒農場</option>
+      <option value="step15">文化中心</option>
+      <option value="step16">愛河</option>
+      <option value="step17">佛陀紀念中心</option>
+      <option value="step18">駁二特區</option>
+      <option value="step19">六合夜市</option>
+      <option value="step20">義大遊樂中心</option>
+    </select>
+    <br>
+    <br>
+        <p><button type="button" id="calculate" onclick="calculateDistances();">Calculate distances</button></p>
+      </div>
+     <div id="outputDiv"></div>
+    </div>
+    <div id="map-canvas"></div>
+    <script>
+        document.getElementById("calculate").onclick =  function(){
+         alert	($('#start').val());
+    	calculateDistances(step19,step20,step13,step14);
+    	};
+    	</script>
+
+         </div>
+
+      </div> <!-- Row End-->
+
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="../js/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="../js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="../js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="../js/jquery.flexslider.js"></script>
+   <script src="../js/waypoints.js"></script>
+   <script src="../js/jquery.fittext.js"></script>
+   <script src="../js/magnific-popup.js"></script>
+   <script src="../js/doubletaptogo.js"></script>
+   <script src="../js/spin.js"></script>
+
+   <script src="../js/init.js"></script>
+
+</body>
+
+</html>

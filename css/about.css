@@ -1,0 +1,202 @@
+body{background:url("../Images/main-background-bg.png");}
+#a{
+width: 70%;
+-webkit-border-radius: 30px;
+-webkit-border-top-left-radius: 30px;
+-webkit-border-bottom-right-radius: 30px;
+border-radius: 30px;
+border-top-left-radius: 30px;
+border-bottom-right-radius: 30px;
+padding:25px;
+background-color:white;
+background-repeat:no-repeat;
+background-position:left;
+margin-left: auto;
+margin-right: auto;
+box-shadow: 10px 10px 5px #57262d;
+text-align:center;
+color:black;
+}
+h1{font-size:70px;
+	color:#9c4551;
+	text-shadow:2px 2px #34171b;
+	font-family:cursive;
+}
+p{font-family:cursive;
+  font-size:25px;}
+input{border-radius: 10px;
+	  font-size:15px;}
+textarea{border-radius: 15px;
+       font-size:15px;}
+button{border-radius: 30px;
+       background-color:#DF0101;
+       font-family:monospace;
+       font-size:20px;}
+
+.wrap{
+	margin:0 auto;
+	width:80%;
+}
+.wrapper{
+	padding:0 4%;
+}
+h2.style{
+	font-size: 2em;
+	color: #ffffff;
+	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif, sans-serif;
+}
+p.style{
+	color: #666666;
+	line-height: 1.8em;
+	font-size: 0.8725em;
+}
+
+
+.header{
+	padding-top: 2%;
+}
+.logo{
+	float:left;
+}
+.cssmenu {
+	float: right;
+	font-size:18px;
+	
+}
+.cssmenu > ul > li {
+  	display:inline-block;
+ 	position: relative;
+	background: #f6f6f6; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f6f6f6 1%, #f0f0f0 19%, #efefef 39%, #ededed 59%, #dddddd 98%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#f6f6f6), color-stop(19%,#f0f0f0), color-stop(39%,#efefef), color-stop(59%,#ededed), color-stop(98%,#dddddd)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f6f6f6 1%,#f0f0f0 19%,#efefef 39%,#ededed 59%,#dddddd 98%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f6f6f6 1%,#f0f0f0 19%,#efefef 39%,#ededed 59%,#dddddd 98%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f6f6f6 1%,#f0f0f0 19%,#efefef 39%,#ededed 59%,#dddddd 98%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f6f6f6 1%,#f0f0f0 19%,#efefef 39%,#ededed 59%,#dddddd 98%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+}
+.cssmenu > ul > li.active a{
+	color: #ffffff;
+	background: #9d9d9d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #9d9d9d 5%, #8d8d8d 40%, #7d7d7d 68%, #6d6d6d 82%, #5d5d5d 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#9d9d9d), color-stop(40%,#8d8d8d), color-stop(68%,#7d7d7d), color-stop(82%,#6d6d6d), color-stop(100%,#5d5d5d)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9d9d9d', endColorstr='#5d5d5d',GradientType=0 ); /* IE6-9 */
+}
+.cssmenu > ul > li span img {
+	vertical-align: middle;
+}
+.cssmenu > ul > li > a {
+	display: block;
+	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif, sans-serif;
+	font-size: 1em;
+	color: #161616;
+	line-height: 3.8em;
+	padding: 14px 24px;
+	-webkit-transition: color .15s;
+	-moz-transition: color .15s;
+	-o-transition: color .15s;
+	transition: color .15s;
+}
+.cssmenu > ul > li > a:hover {
+	-webkit-transition: 0.9s;
+	-moz-transition: 0.9s;
+	-o-transition: 0.9s;
+	transition: 0.9s;
+	color: #ffffff;
+	background: #9d9d9d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #9d9d9d 5%, #8d8d8d 40%, #7d7d7d 68%, #6d6d6d 82%, #5d5d5d 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#9d9d9d), color-stop(40%,#8d8d8d), color-stop(68%,#7d7d7d), color-stop(82%,#6d6d6d), color-stop(100%,#5d5d5d)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #9d9d9d 5%,#8d8d8d 40%,#7d7d7d 68%,#6d6d6d 82%,#5d5d5d 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9d9d9d', endColorstr='#5d5d5d',GradientType=0 ); /* IE6-9 */
+}
+.cssmenu > ul > li > ul {
+	 font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif, sans-serif;
+	z-index: 999;
+	opacity: 0;
+	visibility: hidden;
+	padding: 8px;
+	background: #5C5C5C;
+	color:#fff;
+	text-align: left;
+	position: absolute;
+	top: 55px;
+	left: 50%;
+	margin-top: 34px;
+	margin-left: -90px;
+	width: 180px;
+	-webkit-transition: all .3s .1s;
+	-moz-transition: all .3s .1s;
+	-o-transition: all .3s .1s;
+	transition: all .3s .1s;
+}
+.cssmenu > ul > li:hover > ul {
+	opacity: 1;
+	top: 65px;
+	visibility: visible;
+}
+.cssmenu > ul > li > ul:before {
+	content: '';
+	display: block;
+	border-color: transparent transparent #5C5C5C transparent;
+	border-style: solid;
+	border-width: 10px;
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	margin-left: -10px;
+}
+.cssmenu > ul ul > li {
+	position: relative;
+}
+.cssmenu ul ul a {
+	color: #ffffff;
+	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif, sans-serif;
+	font-size: 13px;
+	background: #5C5C5C;
+	padding: 8px;
+	display: block;
+	-webkit-transition: background-color 0.1s;
+	-moz-transition: background-color 0.1s;
+	-o-transition: background-color 0.1s;
+	transition: background-color 0.1s;
+}
+.cssmenu ul ul a:hover {
+	background-color: #f0f0f0;
+}
+.cssmenu ul ul ul {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	top: -16px;
+	left: 206px;
+	padding: 8px;
+	background-color: #fafafa;
+	text-align: left;
+	width: 160px;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+}
+.cssmenu ul ul > li:hover > ul {
+	opacity: 1;
+	left: 190px;
+	visibility: visible;
+}
+.cssmenu ul ul a:hover {
+	background: #4F4E4E;
+ 	color: #f0f0f0;
+}
+
+
+
+
+
+

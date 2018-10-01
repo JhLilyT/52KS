@@ -1,0 +1,29 @@
+  html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map-canvas {
+        height: 75%;
+        width: 50%;
+      }
+      #content-pane {
+        float:right;
+        width:48%;
+        padding-left: 2%;
+      }
+      #outputDiv {
+        font-size: 11px;
+      }
+
+      #panel {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        margin-left: -220px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+      }
